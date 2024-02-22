@@ -1,8 +1,10 @@
+using IText7.HtmlToPdf.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<IPdfProcessService,PdfProcessService>();  
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
